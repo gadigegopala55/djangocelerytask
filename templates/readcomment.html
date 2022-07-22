@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% block head %}
+<title>Readcomment Page</title>
+{% endblock%}
+{% block body %}
+<div class="text-center m-4 text-primary">
+    <h1>Comments</h1>
+</div>
+{% for char in mydata %}
+    <div class="m-4">
+        <p>Name : {{char.name}}</p>
+        <p>Comment : {{char.comment}}</p>
+        <hr/>
+    </div>
+    {% endfor %}
+{% endblock%}

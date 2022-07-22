@@ -1,0 +1,20 @@
+{% extends 'navbar.html' %}
+{% block head %}
+<title>Home Page</title>
+{% endblock%}
+{% block body %}
+<div class="home-container m-4 text-center text-primary">
+    <h1>Welcome to My Travelling Blog</h1>
+    <br/>
+    <h1>Traveller - Gopala Krishna</h1>
+</div>
+<hr/>
+<hr/>
+{% for char in blogdata %}
+    <div class="m-4 text-secondary-100">
+        <p>Name : {{char.title}}</p>
+        <p>description : {{char.description}}</p>
+        <hr/>
+    </div>
+    {% endfor %}
+{% endblock%}

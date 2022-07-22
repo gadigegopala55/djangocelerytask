@@ -1,0 +1,17 @@
+{% extends 'postnavbar.html' %}
+{% block head %}
+<title>Subscribers List</title>
+{% endblock%}
+{% block body %}
+<div class="text-center text-primary m-4">
+    <h1>Subscribers List</h1>
+</div>
+{% for char in mydata %}
+    <div class="m-4">
+        <p>Name : {{char.name}}</p>
+        <p>email : {{char.email}}</p>
+        <p>phone number : {{char.phonenumber}}</p>
+        <hr/>
+    </div>
+    {% endfor %}
+{% endblock%}

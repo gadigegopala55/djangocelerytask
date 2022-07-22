@@ -1,0 +1,16 @@
+{% extends 'postnavbar.html' %}
+{% block head %}
+<title>update Page</title>
+{% endblock%}
+{% block body %}
+<div class="login-container">
+    <div class="form text-center">
+        <form method="post">
+            {% csrf_token %}
+            <p class="m-4">description:</p>
+            <input type="text" name="description"/> <br/>
+            <p class="m-4"><input type="submit" value="put" class="submit-button"/></p>
+        </form>
+    </div>
+</div>
+{% endblock%}

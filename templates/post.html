@@ -1,0 +1,39 @@
+{% extends 'postnavbar.html' %}
+{% block head %}
+<title>post Page</title>
+{% endblock%}
+{% block body %}
+<div class="login-container">
+    <div class="login text-center text-primary">
+        <h1>Hi Gopala Krishna</h1>
+        <h1>Post the data</h1>
+    </div>
+    <div class="form m-4">
+        <form method="post">
+            {% csrf_token %}
+            <p>Title:</p>
+            <input type="text" name="title"/> <br/>
+            <p>description:</p>
+            <input type="text" name="description"/> <br/>
+            <p class="message">{{message}}</p>
+            <p><input type="submit" value="post" class="submit-button"/></p>
+        </form>
+    </div>
+    <div class="buttons m-4">
+        <button action="/subscriberslist" class="btn btn-success">
+            <a href="/subscriberslist" class="text-white">Subscribers List</a>
+        </button>
+    </div>
+</div>
+<hr/>
+<hr/>
+{% for char in blogdata %}
+    <div class="m-4">
+        <p>Name : {{char.title}}</p>
+        <p>description : {{char.description}}</p>
+        <button><a href="delete/{{char.id}}">Delete</a></button>
+        <button><a href="update/{{char.id}}">Update</a></button>
+        <hr/>
+    </div>
+{% endfor %}
+{% endblock%}
